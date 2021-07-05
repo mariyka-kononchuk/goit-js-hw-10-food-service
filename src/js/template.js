@@ -1,12 +1,9 @@
-const source = document.querySelector('#menu-template').innerHTML.trim();
-console.log(source);
-const template = Handlebars.compile(source);
+import templateMenuCard from '../templates/menu-card.hbs';
+import menuData from '../menu.json';
 
-const menuData = JSON.parse(json);
-const markup = template(menuData);
 
-console.log(markup);
+const listMenuCards = document.querySelector('.js-menu');
 
-const list = document.querySelector('.js-menu');
-//list.append(...markup);
-list.insertAdjacentHTML('afterbegin', markup);
+const menuCards = templateMenuCard(menuData);
+
+listMenuCards.innerHTML = menuCards;
