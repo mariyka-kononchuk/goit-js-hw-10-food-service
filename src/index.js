@@ -1,2 +1,2 @@
 import './sass/main.scss';
-import { template } from './js/template';
+import './js/template';
