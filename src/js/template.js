@@ -1,7 +1,6 @@
 import templateMenuCard from '../templates/menu-card.hbs';
 import menuData from '../menu.json';
 
-
 const listMenuCards = document.querySelector('.js-menu');
 
 const menuCards = templateMenuCard(menuData);
@@ -14,7 +13,6 @@ const Theme = {
 };
 
 const body = document.querySelector('body');
-
 
 const checkBox =document.querySelector('#theme-switch-toggle'); 
 checkBox.addEventListener('change', onChangeTheme);
@@ -29,16 +27,15 @@ function onChangeTheme(e) {
     }  
 }
 
-function checkCurrentTheme () {
+function checkCurrentTheme() {
     const currentTheme = localStorage.theme;
     if (currentTheme === Theme.LIGHT || null) {
-        checkedTrue();
-        return;
-    } else {
         checkedFalse();
         return;
-    }
-    
+    } else {
+        checkedTrue();
+        return;
+    }  
 }
 
 checkCurrentTheme();
