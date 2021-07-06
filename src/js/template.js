@@ -29,11 +29,11 @@ function onChangeTheme(e) {
 
 function checkCurrentTheme() {
     const currentTheme = localStorage.theme;
-    if (currentTheme === Theme.LIGHT || null) {
-        checkedFalse();
+    if (currentTheme === Theme.DARK) {
+        checkedTrue();
         return;
     } else {
-        checkedTrue();
+        checkedFalse();
         return;
     }  
 }
@@ -51,5 +51,6 @@ function checkedFalse() {
     body.classList.add(Theme.LIGHT);
     body.classList.remove(Theme.DARK);
     localStorage.setItem('theme', Theme.LIGHT);
-    checkBox.checked = false;
+    // checkBox.checked = false;
 }
+
